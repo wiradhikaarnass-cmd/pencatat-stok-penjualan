@@ -19,7 +19,7 @@ def buat_akun(username, password):
         return 'akun berhasil dibuat'
     
     except sqlite3.IntegrityError:
-        raise HTTPException (status_code=409, detail='username atau password telah digunakan')
+        raise HTTPException (status_code=409, detail='username telah digunakan')
 
     finally:
         db.close()
